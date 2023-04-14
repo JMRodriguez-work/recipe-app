@@ -1,9 +1,8 @@
 import './App.css'
 
-function App() {
-
+function App () {
   return (
-    <div className="App">
+    <div className='App'>
       <h1>RECIPE APP</h1>
     </div>
   )
