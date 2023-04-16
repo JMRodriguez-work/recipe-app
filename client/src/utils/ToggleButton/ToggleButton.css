@@ -1,0 +1,52 @@
+    [data-theme='dark'] button > svg {
+    transform: rotate(-180deg);
+  }
+  
+  .toggle-button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    transform: rotate(180deg);
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px); /* Agregar backdrop-filter para crear efecto de vidrio */
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.15),
+                0 0 8px 0 rgba(0, 0, 0, 0.15) inset; /* Agregar sombra suave alrededor del botón */
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .toggle-button:hover {
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .toggle-button:focus {
+    outline: none;
+  }
+
+  
+  
+  .toggle-button > svg {
+    width: 20px;
+    height: 20px;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+  }
+
+  
+  [data-theme="light"] .toggle-button {
+    border-radius: 50%;
+    background-color: rgba(186, 221, 226, 0.5);
+    backdrop-filter: blur(10px); /* Agregar backdrop-filter para crear efecto de vidrio */
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.15),
+                0 0 8px 0 rgba(0, 0, 0, 0.15) inset; /* Agregar sombra suave alrededor del botón */
+    transition: all 0.3s ease-in-out;
+  }
+
+  [data-theme="light"] .toggle-button > svg {
+    color: #e59f14;
+  }
+  
+  [data-theme="light"] .toggle-button:hover {
+    background-color: rgba(186, 221, 226, 1);
+  }
+  

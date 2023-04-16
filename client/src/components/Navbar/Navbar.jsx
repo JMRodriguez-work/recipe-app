@@ -1,14 +1,8 @@
 import React, { useContext } from 'react'
-import './Navbar.css'
 import { ThemeContext } from '../../context/ThemeContext'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
-
-const ToggleButton = ({ isOn, handleToggle }) => (
-  <button className='toggle-button' onClick={handleToggle}>
-    {isOn ? <FontAwesomeIcon icon={faMoon} /> : <FontAwesomeIcon icon={faSun} />}
-  </button>
-)
+import { ToggleButton } from '../../utils/ToggleButton/ToggleButton'
+import './Navbar.css'
+import { Link } from 'react-router-dom'
 
 export const Navbar = () => {
   const { darkMode, setDarkMode } = useContext(ThemeContext)
@@ -16,8 +10,8 @@ export const Navbar = () => {
     setDarkMode(!darkMode)
   }
   return (
-    <nav>
-      <h1>Navbar</h1>
+    <nav className='nav'>
+      <Link to='/'><h1>Recipes</h1></Link>
       <ToggleButton isOn={darkMode} handleToggle={toggleDarkmode} />
     </nav>
   )

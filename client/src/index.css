@@ -27,6 +27,8 @@ body {
   background-color: var(--background);
   transition: background-color .3s ease;
   color: var(--p);
+  width: 100%;
+  height: 100vh;
 }
 
 h1,
@@ -49,4 +51,8 @@ button:hover {
   color: var(--button);
   background-color: var(--background);
   cursor: pointer;
+}
+
+a {
+  text-decoration: none;
 }
