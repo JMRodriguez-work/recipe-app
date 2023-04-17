@@ -6,7 +6,7 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 export const Footer = () => {
   return (
     <footer className='footer'>
-      <p>Copyright ©</p>
+      <p>JMR ©</p>
       <a
         href='https://github.com/JMRodriguez-work'
         target='_blank'

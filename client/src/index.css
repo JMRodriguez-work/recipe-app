@@ -5,6 +5,7 @@
   --button: #ff8ba7;
   --button-text: #33272a;
   --p: #594a4e;
+  --secondary-background: #f9ccf5;
 }
 
 [data-theme="dark"] {
@@ -13,6 +14,7 @@
   --p: #94a1b2;
   --button: #7f5af0;
   --button-text: #fffffe;
+  --secondary-background: #242629;
 }
 
 * {
