@@ -1,7 +1,7 @@
 import './App.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Layout } from './container/Layout'
-import { Error, Home, Auth, CreateRecipe, SavedRecipes } from './pages/index'
+import { Error, Home, CreateRecipe, SavedRecipes, Login, Register } from './pages/index'
 
 const router = createBrowserRouter([
   {
@@ -14,8 +14,12 @@ const router = createBrowserRouter([
         element: <Home />
       },
       {
-        path: '/auth',
-        element: <Auth />
+        path: '/login',
+        element: <Login />
+      },
+      {
+        path: '/register',
+        element: <Register />
       },
       {
         path: '/create-recipe',

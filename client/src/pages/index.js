@@ -1,5 +1,6 @@
 export { Home } from './Home/Home'
 export { Error } from './Error/Error'
-export { Auth } from './Auth/Auth'
 export { SavedRecipes } from './SavedRecipes/SavedRecipes'
 export { CreateRecipe } from './CreateRecipe/CreateRecipe'
+export { Register } from './Auth/Register'
+export { Login } from './Auth/Login'

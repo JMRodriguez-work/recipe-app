@@ -19,7 +19,8 @@ export const Navbar = () => {
         <ul className='nav__right__ul'>
           <Link to='/create-recipe'><li>Create a recipe</li></Link>
           <Link to='/saved-recipes'><li>Saved recipes</li></Link>
-          <Link to='/auth'><li>Login/Signin</li></Link>
+          <Link to='/login'><li>Log in</li></Link>
+          <Link to='/register'><li>Register</li></Link>
         </ul>
         <ToggleButton isOn={darkMode} handleToggle={toggleDarkmode} />
       </div>

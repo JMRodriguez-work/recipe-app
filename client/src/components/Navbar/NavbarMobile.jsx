@@ -20,7 +20,8 @@ export const NavbarMobile = ({ isMobileMenuHidden, setIsMobileMenuHidden, toggle
         <ul className='nav__mobile__ul'>
           <Link onClick={() => setIsMobileMenuHidden(true)} to='/create-recipe'><li>CREATE RECIPE</li></Link>
           <Link onClick={() => setIsMobileMenuHidden(true)} to='/saved-recipes'><li>SAVED RECIPES</li></Link>
-          <Link onClick={() => setIsMobileMenuHidden(true)} to='/auth'><li>LOGIN-SIGNIN</li></Link>
+          <Link onClick={() => setIsMobileMenuHidden(true)} to='/login'><li>LOGIN</li></Link>
+          <Link onClick={() => setIsMobileMenuHidden(true)} to='/register'><li>REGISTER</li></Link>
         </ul>
       </div>
     </>

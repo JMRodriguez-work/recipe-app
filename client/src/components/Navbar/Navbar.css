@@ -33,8 +33,8 @@
 
 .nav__right__ul li {
     color: var(--headline);
-    font-weight: bold;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
+    font-weight: 600;
     transition: all .4s ease;
 }
 
@@ -50,6 +50,13 @@
 .nav__right__ul :first-child li:hover {
     color: var(--background)
   }
+
+.nav__right__ul :last-child li {
+    border: 1px solid var(--headline);
+    padding: 3px 8px;
+    border-radius: 8px;
+    line-height: 30px;
+}
 
 .nav__right__ul li:hover {
     color: var(--button);
@@ -116,6 +123,8 @@
         background-color: var(--button);
         color: var(--button-text);
         border-radius: 8px;
+        width: 150px;
+        text-align: center;
     }
     
 }
