@@ -1,7 +1,7 @@
 import React from 'react'
 import './AuthForm.css'
 
-export const AuthForm = ({ buttonName, onSubmitForm }) => {
+export const AuthForm = ({ label, onSubmitForm }) => {
   return (
     <form onSubmit={onSubmitForm}>
       <label htmlFor='username'>Username</label>
@@ -16,7 +16,7 @@ export const AuthForm = ({ buttonName, onSubmitForm }) => {
         type='password'
         name='password'
       />
-      <button type='submit' className='form-button'>{buttonName}</button>
+      <button type='submit' className='form-button'>{label}</button>
     </form>
   )
 }

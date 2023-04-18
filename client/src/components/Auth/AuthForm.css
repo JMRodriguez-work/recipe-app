@@ -32,4 +32,5 @@ form input:focus {
     border: none;
     transition: all .4s ease;
     font-weight: 400;
+    text-transform: uppercase;
 }
