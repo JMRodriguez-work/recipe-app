@@ -1,0 +1,45 @@
+.message__wrapper {
+    width: 100%;
+    height: 70vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    animation: fade-in .5s ease-in, slide-up 0.5s ease-in;
+}
+
+.message__title {
+    font-weight: 300;
+}
+
+.message__button {
+    padding: 15px 20px;
+    border: none;
+    border-radius: 8px;
+    transition: all .4s ease;
+}
+
+.message__button:hover {
+    border: none;
+    outline: 1px solid var(--button);
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slide-up {
+    from {
+        transform: translateY(20px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
