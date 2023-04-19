@@ -5,10 +5,14 @@ import { Link } from 'react-router-dom'
 import { ToggleButton } from '../../utils/ToggleButton/ToggleButton'
 import { ThemeContext } from '../../context/ThemeContext'
 
-export const NavbarMobile = ({ isMobileMenuHidden, setIsMobileMenuHidden, toggleDarkmode }) => {
+export const NavbarMobile = ({ isMobileMenuHidden, setIsMobileMenuHidden, toggleDarkmode, cookies, handleLogout }) => {
   const { darkMode } = useContext(ThemeContext)
   const handleMobileMenuButtonClick = () => {
     setIsMobileMenuHidden(!isMobileMenuHidden)
+  }
+  const handleLogoutMobile = () => {
+    setIsMobileMenuHidden(true)
+    handleLogout()
   }
   return (
     <>
@@ -20,8 +24,20 @@ export const NavbarMobile = ({ isMobileMenuHidden, setIsMobileMenuHidden, toggle
         <ul className='nav__mobile__ul'>
           <Link onClick={() => setIsMobileMenuHidden(true)} to='/create-recipe'><li>CREATE RECIPE</li></Link>
           <Link onClick={() => setIsMobileMenuHidden(true)} to='/saved-recipes'><li>SAVED RECIPES</li></Link>
-          <Link onClick={() => setIsMobileMenuHidden(true)} to='/login'><li>LOGIN</li></Link>
-          <Link onClick={() => setIsMobileMenuHidden(true)} to='/register'><li>REGISTER</li></Link>
+          {
+            !cookies.access_token
+              ? (
+                <>
+                  <Link onClick={() => setIsMobileMenuHidden(true)} to='/login'><li>Log in</li></Link>
+                  <Link onClick={() => setIsMobileMenuHidden(true)} to='/register'><li>Register</li></Link>
+                </>
+                )
+              : (
+                <button onClick={handleLogoutMobile} className='nav__mobile__ul-button'>
+                  Logout
+                </button>
+                )
+          }
         </ul>
       </div>
     </>

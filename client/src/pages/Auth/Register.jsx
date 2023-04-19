@@ -33,7 +33,7 @@ export const Register = () => {
     }
   }
 
-  if (userUpdate) return <NewMessage message={message} /> // After submiting the form shows info
+  if (userUpdate) return <NewMessage setUserUpdate={setUserUpdate} message={message} /> // After submiting the form shows info
 
   return (
     <section className='login'>

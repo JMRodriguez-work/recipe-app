@@ -33,3 +33,9 @@
 .auth__container a {
     color: var(--button)
 }
+
+@media screen and (max-width: 425px) {
+    .login {
+        margin-top: 20px;
+    }
+}

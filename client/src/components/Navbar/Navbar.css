@@ -62,6 +62,18 @@
     color: var(--button);
 }
 
+.nav__right__ul-button {
+    color: var(--headline);
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 30px;
+    transition: all .4s ease;
+    border: 1px solid var(--headline);
+    background: transparent;
+    padding: 3px 8px;
+    border-radius: 8px;
+}
+
 .nav__mobile-button {
     display: none;
 }
@@ -70,9 +82,18 @@
     display: none;
 }
 
-@media screen and (min-width: 500px) {
+
+
+
+@media screen and (min-width: 426px) {
     .nav__mobile__container {
         display: none;
+    }
+}
+
+@media screen and (max-width: 725px) {
+    .nav__right__ul {
+        gap: 15px;
     }
 }
 
@@ -125,7 +146,19 @@
         border-radius: 8px;
         width: 150px;
         text-align: center;
+        text-transform: uppercase;
     }
-    
+    .nav__mobile__ul-button {
+        padding: 10px 12px;
+        background-color: var(--button);
+        color: var(--button-text);
+        border-radius: 8px;
+        width: 150px;
+        text-transform: uppercase;
+        font-weight: 400;
+        text-align: center;
+        font-size: 1rem;
+        border: none;
+    }
 }
 
