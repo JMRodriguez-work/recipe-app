@@ -27,14 +27,14 @@
 
 .nav__right__ul {
     display: flex;
-    gap: 50px;
+    gap: 30px;
     align-items: center;
 }
 
 .nav__right__ul li {
     color: var(--headline);
     font-size: 1.1rem;
-    font-weight: 600;
+    font-weight: 400;
     transition: all .4s ease;
 }
 
