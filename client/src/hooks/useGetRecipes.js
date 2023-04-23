@@ -1,9 +1,12 @@
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const RECIPES_URL = 'http://localhost:3001/recipes'
 
-export function useGetRecipes () {
+export function useGetRecipes (userID) {
+  const navigate = useNavigate()
   const [recipes, setRecipes] = useState([])
+  const [savedRecipes, setSavedRecipes] = useState([])
   const [error, setError] = useState(false)
   const [loading, setLoading] = useState(true)
 
@@ -25,13 +28,56 @@ export function useGetRecipes () {
       } catch (error) {
         console.error(error)
         setError(true)
+      } finally {
         setLoading(false)
+      }
+    }
+
+    const fetchSavedRecipes = async () => {
+      try {
+        const response = await fetch(`${RECIPES_URL}/savedRecipes/${userID}`, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+        if (!response.ok) {
+          setError(true)
+          throw new Error('Failed fetch request')
+        }
+        const data = await response.json()
+        setSavedRecipes(savedRecipes => data.savedRecipes)
+      } catch (error) {
+        console.error(error)
+        setError(true)
       } finally {
         setLoading(false)
       }
     }
     fetchRecipes()
-  }, [RECIPES_URL])
+    fetchSavedRecipes()
+  }, [RECIPES_URL, userID])
 
-  return { recipes, error, loading }
+  const handleFavorite = async (recipeID) => {
+    if (!userID) {
+      navigate('/login')
+      return
+    }
+    try {
+      const response = await fetch(RECIPES_URL, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ recipeID, userID })
+      })
+      const data = await response.json()
+      setSavedRecipes(savedRecipes => data.savedRecipes)
+      // HERE --> CONTINUE WORKING
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  return { recipes, savedRecipes, handleFavorite, error, loading }
 }

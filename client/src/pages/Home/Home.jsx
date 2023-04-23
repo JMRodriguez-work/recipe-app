@@ -3,9 +3,12 @@ import './Home.css'
 import { Loader } from '../../utils/Loader/Loader'
 import { Card } from '../../components/Card/Card'
 import { useGetRecipes } from '../../hooks/useGetRecipes'
+import { useGetUserID } from '../../hooks/useGetUserID'
 
 export const Home = () => {
-  const { recipes, loading, error } = useGetRecipes()
+  const userID = useGetUserID()
+  const { recipes, savedRecipes, handleFavorite, loading, error } = useGetRecipes(userID)
+  console.log(savedRecipes)
 
   if (loading) return <Loader />
   if (error) return <p>Error</p>
@@ -16,7 +19,7 @@ export const Home = () => {
       <ul className='home__list'>
         {recipes.map(recipe => (
           <li key={recipe._id}>
-            <Card recipe={recipe} />
+            <Card isHome handleFavorite={handleFavorite} recipe={recipe} isSaved={savedRecipes} />
           </li>
         ))}
       </ul>
