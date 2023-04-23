@@ -73,7 +73,8 @@ export function useGetRecipes (userID) {
       })
       const data = await response.json()
       setSavedRecipes(savedRecipes => data.savedRecipes)
-      // HERE --> CONTINUE WORKING
+      // BUG -> if i dont have saved recipes and click for the first time to save
+      // it doesnt update right away, but after that works fine
     } catch (error) {
       console.error(error)
     }
